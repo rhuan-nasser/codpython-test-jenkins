@@ -2,10 +2,10 @@ pipeline{
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Validações') {
             steps {
-                echo "Olá Mundo!"
+                sh 'python --version'
+                  }
+                       }
+           }
         }
-    }
-}
-}
