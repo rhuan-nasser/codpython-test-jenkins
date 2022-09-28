@@ -24,7 +24,7 @@ pipeline{
             steps {
                 sh 'echo "Diretório atual é o $(pwd)"'
                 sh 'echo -e "O conteúdo deste diretório é o \n\n $(ls -l)"'
-                sh 'find . -name *.py | xargs pylint'
+                sh 'find . -name \\*.py | xargs pylint'
             }
         }
     }
