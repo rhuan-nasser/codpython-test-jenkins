@@ -4,7 +4,7 @@ pipeline{
     stages {
         stage('Validações') {
             steps {
-                sh 'python --version'
+                sh 'ls -l /home'
                   }
                        }
            }
