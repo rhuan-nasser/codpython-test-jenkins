@@ -36,7 +36,7 @@ pipeline{
 
         stage('Executando código python') {
             steps {
-                sh 'python python.py'
+                sh 'python python.py &'
                 sh 'curl localhost:5000'
             }
         }
