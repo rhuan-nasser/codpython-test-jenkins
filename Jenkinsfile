@@ -1,13 +1,19 @@
 pipeline{
+
     agent {
+
         docker {
+
             image 'python:latest'
             args '-u root:root'
+
         }
+
     }
 
     stages {
-        stage('Validações') {
+
+        stage('Verifica se há python instalado!') {
             steps {
                 sh 'python --version'
                 sh 'pip --version'
@@ -27,6 +33,14 @@ pipeline{
                 sh 'find . -name *.py | xargs pylint -f parseable | tee pylint.log'
             }
         }
+
+        stage('Executando código python') {
+            steps {
+                sh 'python python.py'
+                sh 'curl localhost'
+            }
+        }
+
     }
         
         }
